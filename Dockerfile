@@ -1,9 +1,15 @@
-FROM ruby:3.1
+FROM ruby:3.1.0
 
 WORKDIR /app
-COPY ./composition_app/Gemfile /app/Gemfile
-COPY ./composition_app/Gemfile.lock /app/Gemfile.lock
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
-COPY ./composition_app /app
+COPY . /app
+
+# コンテナー起動時に毎回実行されるスクリプトを追加
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
 
 CMD ['rails', 's', '-b', '0.0.0.0']

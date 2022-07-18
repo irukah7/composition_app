@@ -1,20 +1,23 @@
-version: '3'
+version: '3.4'
 
 services:
   db:
     image: postgres:14
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_DB: compositiondb
       POSTGRES_USER: composition_user
       POSTGRES_PASSWORD: composition_pass
+      TZ: "Asia/Tokyo"
   app:
     build: .
     container_name: composition_app
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
-      - ./composition_app:/app
+      - .:/app
     ports:
       - '3000:3000'
     depends_on:
