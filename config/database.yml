@@ -27,6 +27,8 @@ default: &default
 development:
   <<: *default
   database: compositiondb
+  host: host.docker.internal
+  port: 5432
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,6 +63,8 @@ development:
 test:
   <<: *default
   database: compositiondb_test
+  host: host.docker.internal
+  port: 5432
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -87,3 +91,5 @@ production:
   database: compositiondb_production
   username: composition_app
   password: <%= ENV["COMPOSITION_APP_DATABASE_PASSWORD"] %>
+  host: host.docker.internal
+  port: 5432
