@@ -1446,3 +1446,68 @@ Migrating to AddColumnUser (20220718132823)
   [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6170227149840312195)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for 192.168.0.1 at 2022-07-24 10:21:48 +0000
+Cannot render console from 192.168.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 37.3ms | Allocations: 1282)
+  Rendered layout layouts/application.html.erb (Duration: 1084.8ms | Allocations: 35987)
+Completed 200 OK in 1357ms (Views: 1119.9ms | ActiveRecord: 8.6ms | Allocations: 40081)
+
+
+Started GET "/users" for 192.168.0.1 at 2022-07-24 10:21:53 +0000
+Cannot render console from 192.168.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 599)
+  Rendered layout layouts/application.html.erb (Duration: 50.0ms | Allocations: 2965)
+Completed 200 OK in 56ms (Views: 54.2ms | ActiveRecord: 1.0ms | Allocations: 3298)
+
+
+Started GET "/users" for 192.168.0.1 at 2022-07-24 10:47:06 +0000
+Cannot render console from 192.168.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+SyntaxError (/app/app/controllers/users_controller.rb:32: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:32: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:32: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:32: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users" for 192.168.0.1 at 2022-07-24 10:58:57 +0000
+Cannot render console from 192.168.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 145.2ms | Allocations: 3923)
+  Rendered layout layouts/application.html.erb (Duration: 346.9ms | Allocations: 17670)
+Completed 200 OK in 380ms (Views: 360.1ms | ActiveRecord: 26.8ms | Allocations: 19051)
+
+
+Started GET "/" for 192.168.0.1 at 2022-07-24 11:08:07 +0000
+Cannot render console from 192.168.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 40.9ms | Allocations: 328)
+Completed 200 OK in 70ms (Views: 61.9ms | Allocations: 1124)
+
+
+Started GET "/users" for 192.168.0.1 at 2022-07-24 11:08:12 +0000
+Cannot render console from 192.168.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 76.6ms | Allocations: 4008)
+  Rendered layout layouts/application.html.erb (Duration: 116.8ms | Allocations: 6894)
+Completed 200 OK in 127ms (Views: 122.1ms | ActiveRecord: 16.5ms | Allocations: 7784)
+
+
