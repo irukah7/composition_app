@@ -1,4 +1,9 @@
 <div>ユーザ一覧</div>
 <% @users.each do |user| %>
-    <div><%= user.user_name %></div>
+    <% render user %>
+    <div>
+        <%= link_to 'ユーザー情報を見る', user %>
+    </div>
 <% end %>
+
+<%= link_to 'ユーザー新規作成', new_user_path %>

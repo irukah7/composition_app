@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end
 
     def new
-        @user = User.new(user_params)
+        @user = User.new
     end
 
     def edit
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
         @user.destroy
 
         respond_to do |format|
-            format.html { redirect_to users_urlm notice: '削除しました'}
+            format.html { redirect_to users_url, notice: '削除しました'}
             format.json { head :no_content }
         end
     end
