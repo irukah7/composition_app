@@ -1,37 +1,47 @@
-<% form_with(model: user) do |form| %>
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style='color: red'>
+      <div><%='error' %>保存に失敗しました</div>
+      <ul>
+        <% user.errors.eacg do |error| %>
+          <li><%- error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
     
   <div>
-    <%= form.label :user_id, style: "display: block" %>
+    <%= form.label :ユーザーID, style: "display: block" %>
     <%= form.text_field :user_id %>
   </div>
 
   <div>
-    <%= form.label :relation_user_id, style: "display: block" %>
+    <%= form.label :関係ユーザーID, style: "display: block" %>
     <%= form.text_area :relation_user_id %>
   </div>
 
   <div>
-    <%= form.label :relation_cd, style: "display: block" %>
+    <%= form.label :関係CD, style: "display: block" %>
     <%= form.text_field :relation_cd %>
   </div>
 
   <div>
-    <%= form.label :user_name, style: "display: block" %>
+    <%= form.label :ユーザー名, style: "display: block" %>
     <%= form.text_area :user_name %>
   </div>
 
   <div>
-    <%= form.label :birthday, style: "display: block" %>
+    <%= form.label :誕生日, style: "display: block" %>
     <%= form.text_area :birthday %>
   </div>
 
   <div>
-    <%= form.label :hobby, style: "display: block" %>
+    <%= form.label :趣味, style: "display: block" %>
     <%= form.text_field :hobby %>
   </div>
 
   <div>
-    <%= form.label :comment, style: "display: block" %>
+    <%= form.label :一言コメント, style: "display: block" %>
     <%= form.text_area :comment %>
   </div>
 

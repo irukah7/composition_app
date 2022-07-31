@@ -1,6 +1,7 @@
 <div>ユーザ一覧</div>
+
 <% @users.each do |user| %>
-    <% render user %>
+    <%= render user %>
     <div>
         <%= link_to 'ユーザー情報を見る', user %>
     </div>
